@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator Project</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-900 min-h-screen flex items-center justify-center p-4">
+
+  <div class="bg-slate-800 p-6 rounded-2xl shadow-2xl w-full max-w-sm border border-slate-700">
+    <div class="mb-4">
+      <div id="previous-op" class="text-slate-400 text-sm h-6 text-right font-mono overflow-hidden"></div>
+      <div id="display" class="bg-slate-950 text-white text-3xl font-mono p-4 rounded-xl text-right overflow-x-auto min-h-[64px] flex items-center justify-end border border-slate-800">
+        0
+      </div>
+    </div>
+
+    <div class="grid grid-cols-4 gap-3">
+      <!-- Row 1 -->
+      <button onclick="clearAll()" class="bg-red-500/20 text-red-400 hover:bg-red-500/30 p-4 rounded-xl font-bold transition">C</button>
+      <button onclick="appendValue('π')" class="bg-slate-700 text-slate-200 hover:bg-slate-600 p-4 rounded-xl font-bold transition">π</button>
+      <button onclick="setOperation('^')" class="bg-slate-700 text-slate-200 hover:bg-slate-600 p-4 rounded-xl font-bold transition">xʸ</button>
+      <button onclick="setOperation('/')" class="bg-indigo-600 text-white hover:bg-indigo-500 p-4 rounded-xl font-bold transition">÷</button>
+
+      <!-- Row 2 -->
+      <button onclick="appendValue('7')" class="bg-slate-700/50 text-white hover:bg-slate-700 p-4 rounded-xl font-bold transition">7</button>
+      <button onclick="appendValue('8')" class="bg-slate-700/50 text-white hover:bg-slate-700 p-4 rounded-xl font-bold transition">8</button>
+      <button onclick="appendValue('9')" class="bg-slate-700/50 text-white hover:bg-slate-700 p-4 rounded-xl font-bold transition">9</button>
+      <button onclick="setOperation('*')" class="bg-indigo-600 text-white hover:bg-indigo-500 p-4 rounded-xl font-bold transition">×</button>
+
+      <!-- Row 3 -->
+      <button onclick="appendValue('4')" class="bg-slate-700/50 text-white hover:bg-slate-700 p-4 rounded-xl font-bold transition">4</button>
+      <button onclick="appendValue('5')" class="bg-slate-700/50 text-white hover:bg-slate-700 p-4 rounded-xl font-bold transition">5</button>
+      <button onclick="appendValue('6')" class="bg-slate-700/50 text-white hover:bg-slate-700 p-4 rounded-xl font-bold transition">6</button>
+      <button onclick="setOperation('-')" class="bg-indigo-600 text-white hover:bg-indigo-500 p-4 rounded-xl font-bold transition">-</button>
+
+      <!-- Row 4 -->
+      <button onclick="appendValue('1')" class="bg-slate-700/50 text-white hover:bg-slate-700 p-4 rounded-xl font-bold transition">1</button>
+      <button onclick="appendValue('2')" class="bg-slate-700/50 text-white hover:bg-slate-700 p-4 rounded-xl font-bold transition">2</button>
+      <button onclick="appendValue('3')" class="bg-slate-700/50 text-white hover:bg-slate-700 p-4 rounded-xl font-bold transition">3</button>
+      <button onclick="setOperation('+')" class="bg-indigo-600 text-white hover:bg-indigo-500 p-4 rounded-xl font-bold transition">+</button>
+
+      <!-- Row 5 -->
+      <button onclick="appendValue('0')" class="bg-slate-700/50 text-white hover:bg-slate-700 p-4 rounded-xl font-bold transition">0</button>
+      <button onclick="appendValue('.')" class="bg-slate-700/50 text-white hover:bg-slate-700 p-4 rounded-xl font-bold transition">.</button>
+      <button onclick="calculateSqrt()" class="bg-slate-700 text-slate-200 hover:bg-slate-600 p-4 rounded-xl font-bold transition">√</button>
+      <button onclick="setOperation('%')" class="bg-indigo-600 text-white hover:bg-indigo-500 p-4 rounded-xl font-bold transition">%</button>
+
+      <!-- Row 6 -->
+      <button onclick="calculateResult()" class="col-span-4 bg-emerald-600 text-white hover:bg-emerald-500 p-4 rounded-xl font-bold transition mt-1">=</button>
+    </div>
+  </div>
+
+ <script src="script.js"></script>
+
+</body>
+</html>
