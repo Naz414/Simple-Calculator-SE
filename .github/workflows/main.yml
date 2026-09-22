@@ -1,0 +1,27 @@
+name: Calculator CI
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check required files
+        run: |
+          test -f calculator.html
+          test -f style.css
+          test -f script.js
+
+      - name: Basic HTML check
+        run: |
+          grep -q "</html>" calculator.html
+
+      - name: CI test passed
+        run: echo "Calculator project checks passed successfully."
