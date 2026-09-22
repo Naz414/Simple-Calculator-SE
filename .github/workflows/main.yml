@@ -15,13 +15,13 @@ jobs:
 
       - name: Check required files
         run: |
-          test -f calculator.html
+          test -f index.html
           test -f style.css
           test -f script.js
 
       - name: Basic HTML check
         run: |
-          grep -q "</html>" calculator.html
+          grep -q "</html>" index.html
 
       - name: CI test passed
         run: echo "Calculator project checks passed successfully."
